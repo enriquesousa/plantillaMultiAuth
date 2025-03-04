@@ -21,6 +21,13 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Project
+`/Sites/JESS/plantillaMultiAuth`
+
+Plantilla Multi Auth: Dos sistemas de Autenticación, uno para Admin y por separado otro sistema de Autenticación para usuarios con sus respectivos paneles de control (Dashboards)
+
+- 154. Create Admin Auth System Part 3
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
