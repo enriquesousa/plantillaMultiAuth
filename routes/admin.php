@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 * ------------------------
 */
 
+// Al middleware de guest se le pasa el guard admin para si el admin ya esta login ya no pueda entrar a rutas de guest
 Route::group(['middleware' => 'guest:admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // Eliminar estas rutas de registro!
@@ -41,7 +42,7 @@ Route::group(['middleware' => 'guest:admin', 'prefix' => 'admin', 'as' => 'admin
 * Admin Auth Routes admin.
 * ------------------------
 */
-Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(["middleware" => "auth:admin", "prefix" => "admin", "as" => "admin."], function () {
 
     Route::get('verify-email', EmailVerificationPromptController::class)->name('verification.notice');
     Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)->middleware(['signed', 'throttle:6,1'])->name('verification.verify');
