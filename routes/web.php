@@ -3,6 +3,7 @@
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\InstructorDashboardController;
 use App\Http\Controllers\Frontend\UserDashboardController;
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\ProfileController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,8 +12,10 @@ use Illuminate\Support\Facades\Route;
 /* **************************************************** */
 /* Frontend Routes - Rutas para los usuarios en general */
 /* **************************************************** */
-Route::get('/', [FrontendController::class, 'index'])->name('home');
+Route::get('/', [FrontendController::class, 'index'])->middleware('localization')->name('home');
 
+// Set Language
+Route::get('/locale/{locale}', [LocalizationController::class, 'setLanguage'])->name('locale');
 
 /* ********************************* */
 /* Rutas de User - User Dashboard   */

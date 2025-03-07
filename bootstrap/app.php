@@ -3,6 +3,7 @@
 // use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 
 use App\Http\Middleware\CheckRoleMiddleware;
+use App\Http\Middleware\LocalizationMiddleware;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Foundation\Application;
@@ -21,6 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'auth' => Authenticate::class,
             'guest' => RedirectIfAuthenticated::class,
             'check_role' => CheckRoleMiddleware::class,
+            'localization' => LocalizationMiddleware::class
         ]);
 
     })
